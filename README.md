@@ -1,0 +1,3 @@
+# Data Management and the Future of the U.S. Electricity Grid
+
+This website was created by Nikhil Mulani to be presented at [the History of Energy and the Environment Conference](http://www.fas.harvard.edu/~histecon/energyhistory/) at Harvard University. Thanks are due to Professor Emma Rothschild and the Center for History and Economics for supporting the project. The heatmap visualization is based on the code by Tom May (tjdecke) found [here](http://bl.ocks.org/tjdecke/5558084) and the Voronoi diagram was built using Mike Bostock's tessellation code [here](http://bl.ocks.org/mbostock/4060366). This website also makes use of the [Bootstrap grid layout](http://getbootstrap.com/) and [FontAwesome](http://fortawesome.github.io/Font-Awesome/icons/) icon set.

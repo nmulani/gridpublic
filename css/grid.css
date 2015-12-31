@@ -1,0 +1,314 @@
+/* Custom CSS Styling by Nikhil Mulani, with Bootstrap grid layout elements */
+
+
+/* Bootstrap grid layout styling */
+h4 {
+  margin-top: 25px;
+}
+.row {
+  margin-bottom: 20px;
+}
+.row .row {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  /*
+  background-color: #eee;
+  background-color: rgba(86,61,124,.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86,61,124,.2);*/
+}
+
+hr {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}      
+
+.swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+}
+    
+
+/* Load Computer Modern font */
+
+@font-face {font-family: "Computer Modern";src: url('/fonts/cmunss.otf');}
+
+
+/* Timeline styling */
+
+.mini text {
+  font-family: "Computer Modern"; 
+  font-size: 11px;
+}
+
+.main text {
+  font-family: "Computer Modern"; 
+  font-size: 9px;
+  font-weight: bold;
+
+}
+
+
+.month text {
+  text-anchor: start;
+}
+
+.axis line, .axis path {
+  stroke: #f9f5dc;
+}
+
+
+.miniItem {
+  stroke-width: 6;
+}
+
+
+.A {
+  stroke: #f9f5dc;
+  fill: #F26C4F;
+}
+.B {
+  stroke: #f9f5dc;
+  fill: #C69C6E;
+}
+.C {
+  stroke: #f9f5dc;
+  fill: #F7941D;
+}
+.D {
+  stroke: #f9f5dc;
+  fill: #A36209;
+}
+.E{
+  stroke: #f9f5dc;
+  fill: #FDC68A;
+
+}
+.F{
+  stroke: #f9f5dc;
+  fill: #FFF79A;
+}
+.white {
+  stroke: #f9f5dc;
+  fill: #f9f5dc;
+}
+.gray {
+  stroke: gray;
+  fill: gray;
+}
+
+.brush .extent {
+  /*stroke: gray;
+  fill: #ff69b4; */
+  fill-opacity: .8; 
+  
+}
+
+
+
+/* styling for jQuery pop-up on bubble chart */
+.popover-title {
+  font-family: "Computer Modern"; 
+  font-size: 12px;
+  line-height: 13px;
+
+}
+.popover-content {
+  font-family: "Computer Modern"; 
+  font-size: 12px;
+  line-height: 13px;
+  background: #f9f5dc;
+
+}
+
+/* Risk matrix styling */
+#riskmatrix {
+  overflow: visible;
+}
+
+svg *::selection {
+	background : transparent;
+}
+     
+svg *::-moz-selection {
+	background:transparent;
+} 
+     
+svg *::-webkit-selection {
+    background:transparent;
+}
+
+rect.selection {
+    stroke: #A6358C;
+    stroke-width: 6;
+    stroke-opacity: 1;
+    fill: transparent;
+}
+
+rect.cell-border {
+    stroke: #f9f5dc;
+    stroke-width:2px;   
+}
+
+rect.cell-selected {
+    stroke: #C11C17;
+    stroke-width:2px;   
+}
+
+rect.cell-hover {
+    stroke: #C11C17;
+    stroke-width:2px;   
+}
+
+text.mono {
+    font-size: 9pt;
+    font-family: 'Computer Modern';
+}
+
+text.text-selected {
+    background-color: #5EC8C2;
+    padding: 3px 5px;
+    margin: -3px -5px;
+    line-height: 1.7;
+    border-radius: 3px;
+    fill: #A6358C;
+    overflow: auto;
+    z-index: 500;
+}
+
+text.text-highlight {
+    background-color: #5EC8C2;
+    padding: 3px 5px;
+    margin: -3px -5px;
+    line-height: 1.7;
+    border-radius: 3px;
+    fill: #A6358C;
+    overflow: auto;
+    z-index: 500;
+}
+
+text.text-hover {
+    background-color: #5EC8C2;
+    padding: 3px 5px;
+    margin: -3px -5px;
+    line-height: 1.7;
+    border-radius: 3px;
+    fill: #A6358C;
+    overflow: auto;
+    z-index: 500;
+}
+      
+#riskmatrix .legend .rect  {
+    border-style: dotted;
+    border-width: 1px;
+}
+
+/* Risk matrix tooltip styling */
+#matrixtooltip {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    padding: 10px;
+    background-color: #f9f5dc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    z-index: 500;
+}
+
+#matrixtooltip.hidden {
+    display: none;
+}
+
+#matrixtooltip p {
+    margin: 0;
+    font-family: 'Computer Modern';
+    font-size: 12px;
+    line-height: 13px;
+}
+
+/* Timeline tooltip styling */
+      
+#timelinetooltip {
+	position: absolute;
+	width: 200px;
+	height: auto;
+	padding: 10px;
+	background-color: #f9f5dc;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    z-index: 500;
+}
+
+#timelinetooltip.hidden {
+    display: none;
+}
+
+#timelinetooltip p {
+    margin: 0;
+    font-family: 'Computer Modern';
+    font-size: 12px;
+    line-height: 13px;
+}
+
+/* Styling mechanism tree */
+	
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #F49AC2;
+  stroke: #f9f5dc;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 5px;         
+  font-family: 'Computer Modern';
+  padding: 5px;
+}
+
+.link {
+  fill: none;
+  stroke: #6ECFF6;
+  stroke-width: 1.5px;
+}
+
+/* Justify all content */
+#main {
+	text-align: justify;
+}
