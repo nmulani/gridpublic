@@ -55,7 +55,7 @@ hr {
 
 /* Load Computer Modern font */
 
-@font-face {font-family: "Computer Modern";src: url('/fonts/cmunss.otf');}
+@font-face {font-family: "Computer Modern";src: url('fonts/cmunss.otf');}
 
 
 /* Timeline styling */
