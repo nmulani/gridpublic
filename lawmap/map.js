@@ -1,4 +1,3 @@
-/* Using Datamaps framework for a map of legality for self-driving cars */
 
 
 /*d3.json("/lawmap/gridincidents.geojson", function(error, json) {
@@ -212,14 +211,14 @@ var lawmap = new Datamap({
   "CT": {
         	  "fillKey": "NPCC"
   },
-  "AL": {
-  	    	  "fillKey": "SERC"
-  },
   "AR": {
   	    	  "fillKey": "SPP"
   },
   "AK": {
   	    	  "fillKey": "Other"
+  },
+  "AL": {
+  	    	  "fillKey": "SERC"
   }
   
 }
