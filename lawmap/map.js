@@ -218,7 +218,7 @@ var lawmap = new Datamap({
   	    	  "fillKey": "Other"
   },
   "AL": {
-  	    	  "fillKey": "SPP"
+  	    	  "fillKey": "SERC"
   }
   
 }
