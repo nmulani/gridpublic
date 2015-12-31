@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
+
+    <title>Data Management and the Future of the US Electricity Grid</title>
+<style>
+    .markdown-body {
+        min-width: 200px;
+        max-width: 790px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+    
+path {
+  stroke: #000;
+}
+
+path:first-child {
+  fill: #bebada !important;
+}
+
+/*gridcircle {
+  fill: #000;
+  pointer-events: none;
+}*/
+
+.q0-9 { fill: #fccde5; }
+.q1-9 { fill: #fccde5; }
+.q2-9 { fill: #fccde5; }
+.q3-9 { fill: #fccde5; }
+.q4-9 { fill: #fccde5; }
+.q5-9 { fill: #fccde5; }
+.q6-9 { fill: #fccde5; }
+.q7-9 { fill: #fccde5; }
+.q8-9 { fill: #fccde5; }
+
+rect.bordered {
+        stroke: #E6E6E6;
+        stroke-width:2px;   
+      }
+
+      text.mono {
+        font-size: 9pt;
+        font-family: Consolas, courier;
+        fill: #aaa;
+      }
+
+      text.axis-workweek {
+        fill: #000;
+      }
+
+      text.axis-worktime {
+        fill: #000;
+      }
+    
+    a:link {
+    text-decoration: none;
+    color: brown !important;
+}
+
+a:visited {
+    text-decoration: none;
+    color: brown !important;
+
+}
+
+a:hover {
+    text-decoration: none !important;
+	color: #bebada !important;
+
+}
+
+a:active {
+    text-decoration: none !important;
+}
+  
+</style>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/github-markdown.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/metricsgraphics.css">
+    
+
+    
+    <!-- Custom styles for this template -->
+
+    <script src="jslib/d3.min.js"></script>
+    <script src="jslib/topojson.min.js"></script>
+	<script src="jslib/jquery.min.js"></script>
+	
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Dependencies -->
+
+	<!-- jQuery magic: First function gets the scrolling animation working. Second function opens all links in new tabs.  -->
+
+
+  </head>
+
+  <body>
+  
+<!-- A few odds and ends so that everything works properly. -->
+<!-- Defining an svg pattern for the curly brace here -->
+  <svg id="mySvg" width="80" height="80">
+      <defs id="mdef">
+        <pattern id="image" x="0" y="0" height="20" width="138">
+          <image x="0" y="0" width="138" height="20" xlink:href="img/bracedown.png"></image>
+        </pattern>
+  </defs>
+
+<!-- Calling the matrix tooltip -->
+  <div id="matrixtooltip" class="hidden">
+        <p><span id="value"></p>
+</div>
+
+<!-- Calling the timeline tooltip -->
+  <div id="timelinetooltip" class="hidden">
+        <p><span id="value"></p>
+</div>
+
+
+
+    <div class="container">
+
+<!-- Title section -->
+
+      <h3><i class="fa fa-bolt" style="color:#e5e500"></i> <i>Data Management and the Future of the U.S. Electricity Grid</i></h3>
+	  <br>
+	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p align="center"><a href="#law"><i class="fa fa-ban" style="color:#d0808d"></i> Grid Failures</a> &sdot; <a href="#dm"><i class="fa fa-database" style="color:#210496"></i> Organizational Data Management</a> &sdot; <a href="#df"><i class="fa fa-file-code-o" style="color:#CB99C9"></i> Data Format</a> &sdot; <a href="#mesh"><i class="fa fa-connectdevelop" style="color:#851994"></i>  Mesh Networks</a> &sdot; <a href="#esigdiv"><i class="fa fa-signal" style="color:#ff8000"></i> EMI Signatures</a> &sdot; <a href="#ethics"><i class="fa fa-gavel" style="color:brown"></i> Ethics</a> &sdot; <a href="#about"><i class="fa fa-map-signs" style="color:#000"></i> About</a> </p></div></div>
+<!-- Central menu bar -->
+
+
+<!-- Slider main container -->
+
+
+<div id="law">
+	<div class="row"><div class="col-md-1"></div><div class="col-md-10"><h4><i class="fa fa-ban" style="color:#d0808d"></i><b> Electricity Grid Failures</b></h4></div></div>
+	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p>A combination of deteriorating electricity grid infrastructure and increasing severe weather incidents have resulted in a growing number of blackouts across the United States over the past fifteen years. According to data from non-profit public journalism initiative <a href="http://insideenergy.org/2014/08/18/data-explore-15-years-of-power-outages/">Inside Energy</a>, the five-year annual average of outages doubled every five years over the past fifteen years - from an average of 44 reported grid outages per year between 2000 and 2004 to an average of 200 reported grid outages per year between 2010 and 2013.</p><p>The chart below shows public data available for small to mid-sized blackouts across regions defined by the <a href="http://www.nerc.com/Pages/default.aspx">North American Electric Reliability Corporation</a>. A disproportionate amount of blackouts occur in south and southeastern portions of the U.S., where tropical storms and hurricanes are more common.</p></div></div>
+      <div class="row">
+              <div class="col-md-1"></div><div class="col-md-5"><div id="lawmap"></div></div>
+        <div class="col-md-5">      	<div id="blackoutchart"></div></div>
+      </div>
+      </div>
+
+<div id="dm">
+	<div class="row"><div class="col-md-1"></div><div class="col-md-10"><h4><i class="fa fa-database" style="color:#210496"></i><b> Organizational Data Management</b></h4></div></div>
+
+	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p>Most data about blackouts and grid failures travels by way of unstandardized processes from corporations and utilities to local governments, and then finally to the Department of Energy. Only 35 states mandate grid failure reportage. As a result, many of the entries for grid failures in the DoE database end up missing crucial bits of information, such as the cause of the blackout or number of people affected.</p><p>Other entities involved in the collection and management of data about electricity grids are the Independent System Operators or Regional Transmission Organizations (ISOs or RTOs), which organize <a href="http://www.isorto.org/about/Role">electricity markets</a> covering about two-thirds of the U.S. population and meeting about two-thirds of U.S. demand. Additionally, there are 107 balancing authorities which manage balancing supply and demand for power in specified areas. Depending on the area, the division of balancing authorities can be very complex. New York, New England and Texas are well-integrated and each only has one balancing authority. In contrast, Arkansas and Arizona have eight balancing authorities each, and Florida has eleven. This is not a reflection of system complexity or market demands, but merely of a convoluted history of grid development in the area.</p>
+	        <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p align="center"><img src="img/dataflow.jpg"></img></p></div></div>
+	  </div>
+      </div>
+      </div>
+
+<div id="df">
+	<div class="row"><div class="col-md-1"></div><div class="col-md-10"><h4><i class="fa fa-file-code-o" style="color:#CB99C9"></i> <b> Data Format</b></h4></div></div>
+	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p>The fragmented organizational structure of the U.S. grid is only one factor in how electricity data is managed. Due to how most American grid infrastructure still dates back to the Kennedy administration, internal failure reporting processes are often documented in archaic formats.</p><p>A lack of standardized, accurate data stands in the way of investment and innovation in numerous areas that could lead to preventing maintenance failures through predictive algorithms, better integration with renewable energy sources, and new demand-based approaches to energy conservation.</p><p>In a <a href="http://web.mit.edu/seyda/www/Papers/Interfaces_AwardPaper.pdf">research project</a> led by Cynthia Rudin and Şeyda Ertekin, a team of researchers from MIT and Columbia collaborated with ConEdison to get access to past grid failure data in order to determine predictive characteristics of grid failures and develop techniques to pre-empt future grid issues. They found it possible to use machine learning techniques such as the ROC curve to classify support tickets and predict future vulnerable areas of the electricity grid.</p><p>In the process, though, a large obstacle was the need to use a mix of handwritten and electronic maintenance tickets which were filled with unstandardized slang and abbreviations. The researchers note at the conclusion of their study that they "encourage companies (particularly companies with older equipment) to be careful how data are stored in anticipation of its potential future use." Much of the recent <a href="http://www.rand.org/content/dam/rand/pubs/research_reports/RR700/RR717/RAND_RR717.pdf">RAND report</a> on smart grid technologies is dedicated to discussing potential solutions to the problem of transmitting and managing electricity data, a few of which are explored below. The following is an excerpt from one of the ConEdison maintenance tickets emblematic of the opaque data formatting in use on many grid systems: </p></div></div>
+      <div class="row"><article class="markdown-body"><code>Remarks:
+PAWELA KULESZ 8005556633:SMOKE. COVER/ON. LOC:FRT OF STORE.
+CALL TRFD TO 911. OPERATORS ID/BADGE#:22621.SMELLS BURNING WI
+RES.
+02/11/10 16:10 OR/CU CNT FROM 0 TO 1 BY STAR AUTO
+02/11/10 16:10 FDR FROM TO MN/SHRSQ BY STAR AUTO
+02/11/10 16:15 OR/CU CNT FROM 1 TO 0 BY paganor
+02/11/10 16:15 OR/CU CNT FROM 0 TO 0 BY S paganor
+02/11/10 16:50 ACT TRBL FROM EDSSMH TO RCUSMH BY S</code></article></div>
+    </div>
+      
+<div id="mesh">
+		 <div class="row"><div class="col-md-1"></div><div class="col-md-10"><h4><i class="fa fa-connectdevelop" style="color:#851994"></i><b> Mesh Networks and Efficient Data Collection</b></h4></div></div>
+
+	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p>One technique to help solve the problem of tracking and analyzing maintenance data is to equip the grid with smart meters and sensors, such as phasor measurement units, that can store and transmit data about weather conditions, damaged infrastructure, and grid failures. In order to track maintenance issues regardless of which parts of the grid are down, and to avoid the difficulties of centralized data tracking, mesh networking standards allow for each device to generate, store and transmit data in a flexible and efficient way, by relaying data in a redundant manner across the shortest available path. Decentralized mesh networking is listed as one of the most promising tools to enable smoother data communications across the grid in the recent <a href="http://www.rand.org/content/dam/rand/pubs/research_reports/RR700/RR717/RAND_RR717.pdf">RAND report</a>. </p><p> The Voronoi tessellation visualization method is <a href="http://www.ece.ncsu.edu/netwis/papers/13xw-TWC.pdf">used by researchers</a> to determine where to place grid sensors in order to effectively collect and transmit data on a mesh network. It shows all points nearer to a certain location than to any other point. The visualization below shows a possible distribution of sensors on an electricity grid. Hover the mouse over any point to see the area of the grid that a transmitter would collect and relay data for: </p></div></div>
+      <div class="row"><div class="col-md-2"></div><div class="col-md-10"><voronoi></voronoi></div>
+      </div>
+      </div>
+
+<div id="esigdiv">
+		<div class="row"><div class="col-md-1"></div><div class="col-md-10"><h4><i class="fa fa-signal" style="color:#ff8000"></i><b> EMI Signatures and Demand Reduction</b></h4></div></div>
+
+	  <div class="row"><div class="col-md-1"></div><div class="col-md-10">According to a <a href="http://www.energycollection.us/Energy-Metering/Advanced-Metering-Initiatives.pdf">study</a> conducted by researchers and industry experts, real-time appliance-level data feedback also holds the potential to yield up to 12% annual electricity savings for the consumer.</p><p>Each appliance that consumes electricity generates a unique EMI (electro-magnetic interference) signature depending on the amount of power they use and the time period they are active.</p><p>If consumer homes are equipped with sufficiently advanced smart meters, and data can be reliably relayed from consumers back to suppliers, then a technique called <a href="http://web.stanford.edu/group/peec/cgi-bin/docs/events/2011/becc/presentations/3%20Disaggregation%20The%20Holy%20Grail%20-%20Carrie%20Armel.pdf">"disaggregation"</a> can be applied to the data to distinguish power signatures, relay specifics about energy consumption back to suppliers and consumers, and create incentives for wiser uses of appliances.</p><p>The algorithms for separating out electricity signatures are still being developed and finessed, including through the recent <a href="http://www.mirabel-project.eu/">MIRABEL</a> initiative sponsored by the European Union and a recent <a href="https://www.kaggle.com/c/belkin-energy-disaggregation-competition">Kaggle machine learning competition</a>. By <a href="https://www.kaggle.com/c/belkin-energy-disaggregation-competition/visualization">combining</a> visualization techniques with statistical techniques such as Principal Components Analysis, engineers can separate out appliance-level data. If suppliers take advantage of the data to change how they distribute power on the grid and also incentivize consumers to respond to the data, it can result in load reduction on the entire grid, allow room for more integration with renewable energy sources and reduce outages.</p><p>The recent <a href="http://www.rand.org/content/dam/rand/pubs/research_reports/RR700/RR717/RAND_RR717.pdf">RAND report</a> on the potential of smart grid technologies mentions that effective visualization of appliance-level energy usage is crucial to motivate consumer behavioral change. Below are a chart and heatmap of power consumption over time, which are common visualization methods used to depict energy signatures during the disaggregation process in order to point out where usage can be reduced: </p></div></div>
+      <div class="row"><div class="col-md-3"></div><div class="col-md-6"><div id="esig"></div></div></div>
+    <div class="row"><div class="col-md-2"></div><div class="col-md-9"><div id="heatmap"></div></div>
+
+      </div>
+      </div>
+
+<div id="ethics">
+		<div class="row"><div class="col-md-1"></div><div class="col-md-10"><h4><i class="fa fa-gavel" style="color:brown"></i><b> Ethics</b></h4></div></div>
+	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p>The upgrading of electricity grids to handle large-scale data management and analysis also creates a host of new ethical challenges. Although data availability often makes decision-making easier, it also makes it simpler to <a href="http://spectrum.ieee.org/energy/the-smarter-grid/privacy-on-the-smart-grid">violate individual privacy</a> regarding household activities. It also becomes simpler to design systems and software that can create a deceptive view of how electricity is being distributed and consumed.</p><p>The recent <a href="http://www.ibtimes.com/volkswagen-emissions-scandal-what-defeat-device-how-does-it-work-why-cant-you-see-it-2112350">scandal</a> involving Volkswagen emissions software is only the tip of the iceberg when it comes to the ability of engineers to create closed systems that handle data in ways that are difficult for regulators to understand or obtain access to.</p><p>The way that the "defeat device" software created by Volkswagen engineers functions gives a hint at what the future of software that enables data fraud looks like. The Volkswagen software observes data points such as the position of the steering wheel, vehicle speed, the duration of the engine's operation, and barometric pressure in order to determine whether the car was in testing conditions. If it is, the device activates emissions controls to cheat the test. Similarly, one can imagine consumers on the demand-side creating software that modifies appliance usage data before it is sent to the utility - or the utility faking maintenance or electricity usage data to meet regulator standards.</p></div></div>
+      <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p align="center"><img src="img/volkswagenad.jpg" height=200 width=400></img><figcaption align="center" style="font-size:10px">A Volkswagen advertisement for "fuel-efficient" cars.</figcaption></p></div>
+      </div>
+      </div> 
+
+<div id="about">
+		<div class="row"><div class="col-md-1"></div><div class="col-md-10"><h4><i class="fa fa-map-signs" style="color:#000"></i> <b> About</b></h4></div></div>
+
+	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p>This website was created by <a href="http://www.nikhilmulani.com">Nikhil Mulani</a> to be presented at <a href="http://www.fas.harvard.edu/~histecon/energyhistory/">the History of Energy and the Environment Conference</a> at Harvard University. Thanks are due to Professor Emma Rothschild and the Center for History and Economics for supporting the project. The heatmap visualization is based on the code by Tom May (tjdecke) found <a href="http://bl.ocks.org/tjdecke/5558084">here</a> and the Voronoi diagram was built using Mike Bostock's tessellation code <a href="http://bl.ocks.org/mbostock/4060366">here</a>. This website also makes use of the <a href="http://getbootstrap.com/">Bootstrap grid layout</a> and <a href="http://fortawesome.github.io/Font-Awesome/icons/">FontAwesome</a> icon set.</p></div></div>
+      <div class="row"><div class="col-md-1"></div><div class="col-md-10"></div>
+      </div>
+      </div> 
+      
+
+	<script src="jslib/bootstrap.js"></script>
+	<script src="jslib/metricsgraphics.js"></script>
+	<script src="jslib/blackoutchart.js"></script>
+		<script src="esigchart.js"></script>
+	<script src="jslib/flowchart.min.js"></script>
+	<script src="lawmap/datamaps.usa.js"></script>
+	<script src="lawmap/map.js"></script>
+	<script src="jslib/voronoi.js"></script>
+	<script src="heatmap.js"></script>
+
+
+
+
+ 
+
+
+  </body>
+</html>
