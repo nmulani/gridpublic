@@ -11,6 +11,16 @@
     <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
 
     <title>Data Management and the Future of the US Electricity Grid</title>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71916706-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 <style>
     .markdown-body {
         min-width: 200px;
@@ -25,7 +35,7 @@ path {
 
 /*path:first-child {
   fill: #bebada !important;
-}*/
+}
 
 /*gridcircle {
   fill: #000;
@@ -143,12 +153,16 @@ a:active {
 
       <h3><i class="fa fa-bolt" style="color:#e5e500"></i> <i>Data Management and the Future of the U.S. Electricity Grid</i></h3>
 	  <br>
-	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p align="center"><a href="#law"><i class="fa fa-ban" style="color:#d0808d"></i> Grid Failures</a> &sdot; <a href="#dm"><i class="fa fa-database" style="color:#210496"></i> Organizational Data Management</a> &sdot; <a href="#df"><i class="fa fa-file-code-o" style="color:#CB99C9"></i> Data Format</a> &sdot; <a href="#mesh"><i class="fa fa-connectdevelop" style="color:#851994"></i>  Mesh Networks</a> &sdot; <a href="#esigdiv"><i class="fa fa-signal" style="color:#ff8000"></i> EMI Signatures</a> &sdot; <a href="#ethics"><i class="fa fa-gavel" style="color:brown"></i> Ethics</a> &sdot; <a href="#about"><i class="fa fa-map-signs" style="color:#000"></i> About</a> </p></div></div>
+	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p align="center"><a href="#intro"><i class="fa fa-home" style="color:#c5c4f8"></i> Introduction </a> &sdot; <a href="#law"><i class="fa fa-ban" style="color:#d0808d"></i> Grid Failures</a> &sdot; <a href="#dm"><i class="fa fa-database" style="color:#210496"></i> Organizational Data Management</a> &sdot; <a href="#df"><i class="fa fa-file-code-o" style="color:#CB99C9"></i> Data Format</a> &sdot; <a href="#mesh"><i class="fa fa-connectdevelop" style="color:#851994"></i>  Mesh Networks</a> &sdot; <a href="#esigdiv"><i class="fa fa-signal" style="color:#ff8000"></i> EMI Signatures</a> &sdot; <a href="#ethics"><i class="fa fa-gavel" style="color:brown"></i> Ethics</a> &sdot; <a href="#about"><i class="fa fa-map-signs" style="color:#000"></i> Details</a> </p></div></div>
 <!-- Central menu bar -->
 
 
 <!-- Slider main container -->
 
+<div id="intro">
+	<div class="row"><div class="col-md-1"></div><div class="col-md-10"><h4><i class="fa fa-home" style="color:#c5c4f8"></i> Introduction </h4></div></div>
+	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p> As the United States undergoes a transition towards renewable resources and electrified cars, the country's aging electricity grid infrastructure poses a unique set of challenges and opportunities. This project explores a few of the ways in which data about grid maintenance and consumer electricity consumption has been created, managed, visualized and analyzed in the past, as well as some of the proposed techniques to do so in the future.</p><p> Grid data management practices vary throughout the country and this is part of what contributes to a lack of reference material on this matter. However, this site attempts to cover a few topics of common importance. We hope to continue growing this site, so please <a href="mailto:nmulani@post.harvard.edu">get in touch</a> if you see something missing or wish to contribute.</p></div></div>
+      </div>
 
 <div id="law">
 	<div class="row"><div class="col-md-1"></div><div class="col-md-10"><h4><i class="fa fa-ban" style="color:#d0808d"></i><b> Electricity Grid Failures</b></h4></div></div>
@@ -170,7 +184,7 @@ a:active {
 
 <div id="df">
 	<div class="row"><div class="col-md-1"></div><div class="col-md-10"><h4><i class="fa fa-file-code-o" style="color:#CB99C9"></i> <b> Data Format</b></h4></div></div>
-	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p>The fragmented organizational structure of the U.S. grid is only one factor in how electricity data is managed. Due to how most American grid infrastructure still dates back to the Kennedy administration, internal failure reporting processes are often documented in archaic formats.</p><p>A lack of standardized, accurate data stands in the way of investment and innovation in numerous areas that could lead to preventing maintenance failures through predictive algorithms, better integration with renewable energy sources, and new demand-based approaches to energy conservation.</p><p>In a <a href="http://web.mit.edu/seyda/www/Papers/Interfaces_AwardPaper.pdf">research project</a> led by Cynthia Rudin and Şeyda Ertekin, a team of researchers from MIT and Columbia collaborated with ConEdison to get access to past grid failure data in order to determine predictive characteristics of grid failures and develop techniques to pre-empt future grid issues. They found it possible to use machine learning techniques such as the ROC curve to classify support tickets and predict future vulnerable areas of the electricity grid.</p><p>In the process, though, a large obstacle was the need to use a mix of handwritten and electronic maintenance tickets which were filled with unstandardized slang and abbreviations. The researchers note at the conclusion of their study that they "encourage companies (particularly companies with older equipment) to be careful how data are stored in anticipation of its potential future use." Much of the recent <a href="http://www.rand.org/content/dam/rand/pubs/research_reports/RR700/RR717/RAND_RR717.pdf">RAND report</a> on smart grid technologies is dedicated to discussing potential solutions to the problem of transmitting and managing electricity data, a few of which are explored below. The following is an excerpt from one of the ConEdison maintenance tickets emblematic of the opaque data formatting in use on many grid systems: </p></div></div>
+	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p>Due to how most American grid infrastructure still dates back to the Kennedy administration, internal failure reporting processes are often documented in archaic formats. A lack of standardized, accurate data stands in the way of investment and innovation in numerous areas that could lead to preventing maintenance failures through predictive algorithms, as well as better integration with renewable energy sources.</p><p>In a <a href="http://web.mit.edu/seyda/www/Papers/Interfaces_AwardPaper.pdf">research project</a> led by Cynthia Rudin and Şeyda Ertekin, a team of researchers from MIT and Columbia collaborated with ConEdison to get access to past grid failure data in order to determine predictive characteristics of grid failures and develop techniques to pre-empt future grid issues. They found it possible to use machine learning techniques such as the ROC curve to classify support tickets and predict future vulnerable areas of the electricity grid.</p><p>In the process, though, a large obstacle was the need to use a mix of handwritten and electronic maintenance tickets which were filled with unstandardized slang and abbreviations. The researchers note at the conclusion of their study that they "encourage companies (particularly companies with older equipment) to be careful how data are stored in anticipation of its potential future use." Much of the recent <a href="http://www.rand.org/content/dam/rand/pubs/research_reports/RR700/RR717/RAND_RR717.pdf">RAND report</a> on smart grid technologies is dedicated to discussing potential solutions to the problem of transmitting and managing electricity data, a few of which are explored below. The following is an excerpt from one of the ConEdison maintenance tickets emblematic of the opaque data formatting in use on many grid systems: </p></div></div>
       <div class="row"><article class="markdown-body"><code>Remarks:
 PAWELA KULESZ 8005556633:SMOKE. COVER/ON. LOC:FRT OF STORE.
 CALL TRFD TO 911. OPERATORS ID/BADGE#:22621.SMELLS BURNING WI
@@ -208,9 +222,9 @@ RES.
       </div> 
 
 <div id="about">
-		<div class="row"><div class="col-md-1"></div><div class="col-md-10"><h4><i class="fa fa-map-signs" style="color:#000"></i> <b> About</b></h4></div></div>
+		<div class="row"><div class="col-md-1"></div><div class="col-md-10"><h4><i class="fa fa-map-signs" style="color:#000"></i> <b> Details</b></h4></div></div>
 
-	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p>This website was created by Nikhil Mulani to be presented at <a href="http://www.fas.harvard.edu/~histecon/energyhistory/">the History of Energy and the Environment Conference</a> at Harvard University. Thanks are due to Professor Emma Rothschild and the Center for History and Economics for supporting the project. The heatmap visualization is based on the code by Tom May (tjdecke) found <a href="http://bl.ocks.org/tjdecke/5558084">here</a> and the Voronoi diagram was built using Mike Bostock's tessellation code <a href="http://bl.ocks.org/mbostock/4060366">here</a>. This website also makes use of the <a href="http://getbootstrap.com/">Bootstrap grid layout</a> and <a href="http://fortawesome.github.io/Font-Awesome/icons/">FontAwesome</a> icon set.</p></div></div>
+	  <div class="row"><div class="col-md-1"></div><div class="col-md-10"><p> This project was created by Nikhil Mulani to be presented at <a href="http://www.fas.harvard.edu/~histecon/energyhistory/">the History of Energy and the Environment Conference</a> at Harvard University. Thanks are due to Professor Emma Rothschild and the Center for History and Economics for supporting the project, as well as conference participants for helpful feedback on an earlier version of the site. </p><p> The heatmap visualization is based on the code by Tom May (tjdecke) found <a href="http://bl.ocks.org/tjdecke/5558084">here</a> and the Voronoi diagram was built using Mike Bostock's tessellation code <a href="http://bl.ocks.org/mbostock/4060366">here</a>. This website also makes use of the <a href="http://getbootstrap.com/">Bootstrap grid layout</a> and <a href="http://fortawesome.github.io/Font-Awesome/icons/">FontAwesome</a> icon set.</p></div></div>
       <div class="row"><div class="col-md-1"></div><div class="col-md-10"></div>
       </div>
       </div> 
